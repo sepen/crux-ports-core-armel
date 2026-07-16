@@ -1,0 +1,16 @@
+# Depends on: libgmp
+
+name=libmpfr
+version=4.2.2
+release=1
+source=(https://www.mpfr.org/mpfr-${version%-*}/mpfr-${version%-*}.tar.xz)
+
+build() {
+    cd mpfr-${version%-*}
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+
+    rm -r $PKG/usr/share
+}

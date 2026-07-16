@@ -1,0 +1,16 @@
+# Depends on:
+
+name=libgmp
+version=6.3.0
+release=1
+source=(https://gmplib.org/download/gmp/gmp-$version.tar.xz)
+
+build() {
+    cd gmp-$version
+    ./configure --prefix=/usr \
+                --enable-cxx \
+                --build=arm-unknown-linux-gnueabi
+    make
+    make DESTDIR=$PKG install
+    rm -r $PKG/usr/share
+}
