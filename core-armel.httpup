@@ -1,0 +1,8 @@
+#
+# /etc/ports/core-armel.httpup: Unofficial core ports for CRUX-ARM armel
+#
+
+ROOT_DIR=/usr/ports/core-armel
+URL=https://raw.githubusercontent.com/sepen/crux-ports-core-armel/3.8/
+
+# End of file
